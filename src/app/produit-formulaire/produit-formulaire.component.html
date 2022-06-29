@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <form (ngSubmit)="save()">
+        <table>
+            <tr>
+                <td>Label produit :</td>
+                <td>
+                    <input type="text" name="labelProduct" [(ngModel)]="produit.labelProduct" />
+                </td>
+            </tr>
+            <tr>
+                <td>Image :</td>
+                <td>
+                    <input type="file" name="img" id="img" (change)="selectEvent($event)"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Stock :</td>
+                <td>
+                    <input type="text" name="stock" [(ngModel)]="produit.stock" />
+                </td>
+            </tr>
+            <tr>
+                <td>Identifiant catégorie :</td>
+                <td>
+                    <select name="selectedValue" [(ngModel)]="selectedValue">
+                        <option selected disabled hidden>-- Choisir une catégorie --</option>
+                        <option *ngFor="let c of lCategories; index as i" [ngValue]="c">{{c.desc}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn btn-outline-success my-2 my-sm-0">Valider</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

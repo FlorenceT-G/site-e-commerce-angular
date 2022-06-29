@@ -1,0 +1,46 @@
+<div class="container-fluid">
+
+    <h1 class="txtcenter">Panier</h1>
+
+    <div *ngIf="PanierValid; then panierOK else panierVide"></div>
+    <ng-template #panierOK>
+        <div>
+            <table class="tabcenter">
+                <thead>
+                    <td>Image</td>
+                    <td>Label</td>
+                    <td>Quantité</td>
+                    <td></td>
+                </thead>
+                <tr *ngFor="let p of objetPanier">
+                    <td>
+                        <img src="" class="img-thumbnail" alt="" style="height: 150px; width: 100px;">
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td colspan="2">
+                        <input type="number" id="qty" value="" min="1" , max="">
+                        <button type="button" class="btn outline-dark">Supprimer</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">
+                        <button type="button" class="btn outline-dark" (click)="passerCommande()">Passer commande</button>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="btn outline-dark" (click)="goToAccueil()">Retour</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </ng-template>
+    <ng-template #panierVide>
+        <div class="container-fluid ">Votre panier est vide</div>
+    </ng-template>
+</div>

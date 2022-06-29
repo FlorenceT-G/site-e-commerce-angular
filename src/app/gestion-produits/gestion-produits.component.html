@@ -1,0 +1,51 @@
+<div class="container-fluid" class="tabcenter btn">
+    <button type="button" class="btn btn-dark" (click)="goAjoutProduit()">Ajouter un produit</button>
+</div>
+
+<hr>
+
+<div class="dropdown">
+    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Catégories
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="" *ngFor="let c of lCategories">{{c.desc}}</a>
+
+    </div>
+</div>
+
+<hr>
+
+<div class="container-fluid">
+
+
+
+    <table class="tabcenter">
+        <thead>
+            <tr>
+                <td>Image</td>
+                <td>Label</td>
+                <td>Stock</td>
+                <td colspan="2">Opérations</td>
+            </tr>
+        </thead>
+            <tr *ngFor="let p of lProduits">
+                <td>
+                    <img src="{{acces}}/{{p.img}}" class="img-thumbnail" alt="{{p.labelProduct}}"
+                        style="height: 150px; width: 100px;">
+                </td>
+                <td>{{p.labelProduct}}</td>
+                <td>{{p.stock}}</td>
+                <td>
+                    <button type="button" class="btn outline-dark" (click)="goToModifier(p.idProduct)">Modifier</button>
+                </td>
+                <td>
+                    <button type="button" class="btn outline-dark" (click)="supprimer(p.idProduct)" >Supprimer</button>
+                </td>
+            </tr>
+    </table>
+
+    <hr>
+
+</div>

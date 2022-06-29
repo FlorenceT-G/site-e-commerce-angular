@@ -1,0 +1,27 @@
+
+<div class="container-fluid">
+    <h2><strong>Derniers Produits</strong></h2>
+    <hr>
+    <div class="row" *ngFor="let p of lProduits">
+        <div class="col-lg-4">
+            <img src="/home/florence/Documents/workspace-spring-tool-suite-4-4.14.1.RELEASE/AEC_API/src/main/resources/static/{{p.img}}" class="img-thumbnail" alt="{{p.labelProduct}}"
+                style="height: 150px; width: 100px;">
+            <br>Stock : {{p.stock}}
+            <br>
+            <br>
+        </div>
+        <div class="col-lg-4">{{p.labelProduct}} </div>
+        <div class="col-lg-4">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-dark" (click) = "ajoutPanier(p.idProduct)">Ajouter au Panier</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+

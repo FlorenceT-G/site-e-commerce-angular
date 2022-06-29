@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <button type="button" class="btn btn-dark" (click)="goToNouvelleCategorie()">Ajouter une catégorie</button>
+    <hr>
+    <table class="tabcenter">
+        <thead>
+            <tr class="trcenter">
+                <td>ID</td>
+                <td>Label</td>
+                <td>Description</td>
+                <td colspan="2">Opérations</td>
+            </tr>
+        </thead>
+            <tr *ngFor="let c of lCategories">
+                <td>{{c.idCategorie}}</td>
+                <td>{{c.labelCategorie}}</td>
+                <td>{{c.desc}}</td>
+                <td><button type="button" class="btn outline-dark" (click)="modifier(c.idCategorie)" >Modifier</button>
+                </td>
+                <td><button type="button" class="btn outline-dark" (click)="supprimer(c.idCategorie)">Supprimer</button>
+                </td>
+            </tr>
+    </table>
+</div>

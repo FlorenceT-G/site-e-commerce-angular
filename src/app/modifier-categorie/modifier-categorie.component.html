@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <form (ngSubmit)="save()">
+        <table>
+            <tr>
+                <td>Label catégorie :</td>
+                <td>
+                    <input type="text" name="labelCategorie" [(ngModel)]="categorie.labelCategorie" />
+                </td>
+            </tr>
+            <tr>
+                <td>Description :</td>
+                <td>
+                    <textarea rows="5" cols="30" name="desc" [(ngModel)]="categorie.desc"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="txtcenter">
+                    <button type="submit" class="btn btn btn-outline-success my-2 my-sm-0">Valider</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+import { HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class HttpInterceptorBasicAuthenticationService {
+
+  constructor() { }
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+    let basicChaine = sessionStorage.getItem('token');
+
+    if(basicChaine) {
+      req=req.clone({
+        setHeaders: { Authorization: basicChaine }
+      })
+    }
+    return next.handle(req);
+  }
+}

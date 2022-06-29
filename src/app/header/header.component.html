@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">Lambda</a>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Catégories</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" *ngFor="let c of lCategories; index as i" (click)="goToCategorie(i)">{{c.desc}}</a>
+        </div>
+    </li>
+
+    <div *ngIf="ValidUser">
+
+        <button class="btn btn btn-outline-primary my-2 my-sm-0 btn-sm"
+            (click)="goToAdministrationPage()">Administration</button>
+    </div>
+
+    <div *ngIf="stringObject.username != null" class="textnav">Bonjour {{stringObject.username}}</div>
+
+
+    <div *ngIf="ValidPanier"><button class="btn btn btn-outline-light my-2 my-sm-0 btn-sm"  (click)="goToPanier()">Panier</button></div>
+
+    <div *ngIf="ValidUser; then userok else usernull"></div>
+    <ng-template #usernull>
+        <div>
+            <button class="btn btn btn-outline-primary my-2 my-sm-0 btn-sm"  (click)="getInscrPage()">Inscription</button>
+            <button class="btn btn btn-outline-success my-2 my-sm-0 btn-sm" (click)="getCoPage()">Connexion</button>
+        </div>
+    </ng-template>
+
+    
+    <ng-template #userok>
+        <div><button class="btn btn btn-outline-danger my-2 my-sm-0 btn-sm"  (click)="deconnexion()">Déconnexion</button></div>
+    </ng-template>
+
+</nav>

@@ -1,0 +1,61 @@
+<div class="container-fluid">
+
+    <table class="tabcenter">
+        <thead>
+            <th colspan="2">Informations de l'utilisateur</th>
+        </thead>
+        <tr>
+            <td>Nom :</td>
+            <td>
+                <input path="nom" type="text" name="nom" />
+            </td>
+        </tr>
+        <tr>
+            <td>Prénom :</td>
+            <td>
+                <input path="prenom" type="text" name="prenom" />
+            </td>
+        </tr>
+        <tr>
+            <td>Date de naissance :</td>
+            <td>
+                <input path="dateNaissance" type="date" name="dateNaissance" />
+            </td>
+        </tr>
+        <thead>
+            <th colspan="2">Informations de connexion</th>
+        </thead>
+        <tr>
+            <td>Adresse mail :</td>
+            <td>
+                <input path="email" type="email" name="email" />
+            </td>
+        </tr>
+        <tr>
+            <td>Nom d'utilisateur :</td>
+            <td>
+                <input path="username" type="text" name="username" />
+            </td>
+        </tr>
+        <tr>
+            <td>Mot de passe :</td>
+            <td>
+                <input path="password" type="password" name="password" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit"
+                    class="btn btn btn-outline-success my-2 my-sm-0">Valider</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <span *ngIf="!valid" class="failure txtcenter">{{errormessage}}</span>
+            </td>
+        </tr>
+
+
+    </table>
+</div>

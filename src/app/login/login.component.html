@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <table class="tabcenter">
+        <thead>
+            <th colspan="2">Connexion </th>
+        </thead>
+        <tr>
+            <td>Nom d'utilisateur :</td>
+            <td><input type="text" name="username" [(ngModel)]="credentials.username"></td>
+        </tr>
+        <tr>
+            <td>Mot de passe :</td>
+            <td><input type="password" name="password" [(ngModel)]="credentials.password"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button (click)="valider()"
+                    class="btn btn btn-outline-success my-2 my-sm-0">Valider</button></td>
+        </tr>
+        <tr>
+            <td colspan="2" *ngIf="!validUser" class="failure txtcenter">{{errormessage}}</td>
+        </tr>
+    </table>
+
+</div>
